@@ -49,6 +49,7 @@ namespace Parameterizations
             
             switch (roundMethod)
             {
+                
                 case TimeRoundMethod.REVERSE:
                     timeDirection *= -1;
                     if (time > timeUpper)
@@ -123,6 +124,14 @@ namespace Parameterizations
         
 
     }
+    /**
+     * Different ways of handling reaching the time bounds.
+     * Reverse reverses the direction of time when either bound is reached.
+     * Wrap teleports back to the begining.
+     * Reverse wrap teleports back to the beginning and reverses time,
+     * this is useful if a movement in a chain loops back to its beginning. 
+     * Once the loop is complete it will wrap back to the starting point and reverse so it goes into the previous movement of the chain.
+     */
     public enum TimeRoundMethod
     {
         REVERSE,

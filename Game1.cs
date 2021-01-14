@@ -25,15 +25,17 @@ namespace Parameterizations
             Movement movement = new Movement();
             movement.AddMovement(Movement.CreateLine(new Vector2(30, 50), new Vector2(200, 300), 0.01f));            
             movement.timeUpper = 100;
+
             Movement movement1 = new Movement();
             movement1.AddMovement(Movement.CreateLine(new Vector2(200, 300), new Vector2(300, 100), 0.01f));
             movement1.timeUpper = 100;
+
             Movement movement2 = Movement.CreateOrbit(new Vector2(250, 100), 50, 100);
             movement2.timeUpper = 100;
             movement2.roundMethod = TimeRoundMethod.REVERSE_WRAP;
+
             chain.AddMovement(movement).AddMovement(movement1).AddMovement(movement2);
-            gameObjects.Add(new GameObject(new Vector2(), chain, this));
-           
+            gameObjects.Add(new GameObject(new Vector2(), chain, this));           
 
             base.Initialize();
         }
@@ -41,8 +43,7 @@ namespace Parameterizations
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            smiley = Content.Load<Texture2D>("Smiley");
-            // TODO: use this.Content to load your game content here
+            smiley = Content.Load<Texture2D>("Smiley");            
         }
 
         protected override void Update(GameTime gameTime)
@@ -52,8 +53,7 @@ namespace Parameterizations
             foreach(GameObject gameObject in gameObjects)
             {
                 gameObject.Tick();
-            }
-            // TODO: Add your update logic here
+            }           
 
             base.Update(gameTime);
         }
