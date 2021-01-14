@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Blorgorp
 {
+    /**
+     * A chain of movements to be executed back to back
+     */
     class MovementChain
     {
         ArrayList movements = new ArrayList();
@@ -15,6 +18,9 @@ namespace Blorgorp
             movements.Add(movement);
             return this;
         }
+        /**
+         * Updates the movement
+         */
         public void Tick()
         {
 

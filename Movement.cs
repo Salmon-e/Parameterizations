@@ -5,6 +5,9 @@ using System.Text;
 using Microsoft.Xna.Framework;
 namespace Blorgorp
 {
+    /**
+     * Represents a parameterization of the motion of a point 
+     */
     class Movement
     {
         ArrayList xParam = new ArrayList();
@@ -37,6 +40,10 @@ namespace Blorgorp
                 RoundTime();
             }
         }
+        /**
+         * Handles time overflowing its bounds
+         */
+         
         protected void RoundTime()
         {
             
@@ -65,6 +72,7 @@ namespace Blorgorp
 
             }
         }
+        
         public Vector2 GetPosition()
         {
             float x = 0, y = 0;
@@ -78,11 +86,17 @@ namespace Blorgorp
             }
             return new Vector2(x, y);
         }
+        /**
+         * Add the equations of two movements.
+         */
         public void AddMovement(Movement movement)
         {
             xParam.AddRange(movement.xParam);
             yParam.AddRange(movement.yParam);
         }
+        /**
+         * Helper function to create a circular movement.
+         */
 
         public static Movement CreateOrbit(Vector2 center, float radius, float orbitTime)
         {
@@ -91,7 +105,9 @@ namespace Blorgorp
 
             return new Movement(circleX, circleY);
         }
-
+        /**
+         * Helper function to create a linear movement
+         */
         public static Movement CreateLine(Vector2 start, Vector2 end, float speed)
         {
             float dx = end.X - start.X;
