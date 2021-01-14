@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Text;
 
-namespace Blorgorp
+namespace Parameterizations
 {
     /**
      * A chain of movements to be executed back to back

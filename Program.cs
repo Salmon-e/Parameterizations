@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Blorgorp
+namespace Parameterizations
 {
     public static class Program
     {

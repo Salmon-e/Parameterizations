@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Text;
 using Microsoft.Xna.Framework;
-namespace Blorgorp
+namespace Parameterizations
 {
     /**
      * Represents a parameterization of the motion of a point 
